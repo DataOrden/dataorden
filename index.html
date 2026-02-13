@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DataOrden — Tableros y reportes claros para tomar mejores decisiones</title>
-  <meta name="description" content="En DataOrden ayudamos a negocios y despachos a poner orden en sus datos (aunque estén en Excel) y convertirlos en tableros y reportes claros para ventas, inventario, finanzas o marketing." />
-  <meta name="theme-color" content="#111827" />
+  <meta name="description" content="En DataOrden ayudamos a negocios y despachos a poner orden en sus datos (aunque estén en Excel) y convertirlos en tableros y reportes claros para tomar mejores decisiones." />
+  <meta name="theme-color" content="#05070f" />
 
   <meta property="og:title" content="DataOrden — Pon orden en tus datos" />
   <meta property="og:description" content="Tableros y reportes claros para tomar mejores decisiones de ventas, inventario, finanzas o marketing." />
@@ -15,8 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23111827' d='M4 4h16v3H4V4zm0 6h10v3H4v-3zm0 6h16v3H4v-3z'/%3E%3C/svg%3E">
+  <!-- Cache busting -->
+  <link rel="stylesheet" href="./styles.css?v=4" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e5e7eb' d='M4 4h16v3H4V4zm0 6h10v3H4v-3zm0 6h16v3H4v-3z'/%3E%3C/svg%3E">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -188,8 +189,8 @@
               <h3>Dashboard listo para usar</h3>
               <p class="muted">Tablero interactivo en <strong>Looker Studio</strong> o <strong>Power BI</strong>.</p>
               <ul class="checklist">
-                <li>KPIs clave: ventas, unidades, ticket, margen (si existe)</li>
-                <li>Análisis por producto / categoría / canal / tienda / fecha</li>
+                <li>KPIs clave (ventas, unidades, ticket, margen si existe)</li>
+                <li>Análisis por producto/categoría/canal/tienda/fecha</li>
                 <li>Estacionalidad y picos de venta</li>
                 <li>Indicadores operativos (inventario, quiebres, rotación) si aplica</li>
               </ul>
@@ -215,7 +216,7 @@
               <h3>Actualización periódica</h3>
               <p class="muted">Actualizamos con la periodicidad acordada (semanal o mensual).</p>
               <ul class="checklist">
-                <li>Control de calidad del dato: duplicados, faltantes, errores típicos</li>
+                <li>Control de calidad del dato (duplicados, faltantes, errores típicos)</li>
                 <li>Histórico consistente para comparativos</li>
                 <li>Documentación simple del flujo</li>
               </ul>
@@ -405,6 +406,6 @@
     </footer>
   </main>
 
-  <script src="./script.js"></script>
+  <script src="./script.js?v=4"></script>
 </body>
 </html>
