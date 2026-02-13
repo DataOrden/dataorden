@@ -93,3 +93,15 @@ initYear();
 initMobileNav();
 initContactLinks();
 initForm();
+
+/* ====== FIX: cerrar menú móvil al navegar ====== */
+(function(){
+  const menu = document.querySelector("#nav-menu");
+  const btn = document.querySelector(".nav-toggle");
+  if(!menu || !btn) return;
+  const close = () => {
+    menu.classList.remove("is-open");
+    btn.setAttribute("aria-expanded","false");
+  };
+  menu.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click", close));
+})();

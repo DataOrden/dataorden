@@ -15,6 +15,7 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -570,3 +571,38 @@ details p{margin: 10px 0 0}
   }
   .nav-menu.is-open{display:flex}
 }
+
+
+/* ====== FIX: header sticky y visible siempre ====== */
+.site-header{
+  position: sticky !important;
+  top: 0;
+  z-index: 9999 !important;
+}
+
+/* Para que al hacer click en el menú, el título no quede tapado por el header */
+section[id]{
+  scroll-margin-top: 90px;
+}
+
+
+/* ====== FIX v4.2: header siempre visible (fixed) ====== */
+:root{ --header-h: 72px; }
+
+.site-header{
+  position: fixed !important;
+  top: 0 !important;
+  left: 0; right: 0;
+  z-index: 2147483647 !important; /* por si algún overlay se cuela */
+}
+
+/* Empuja el contenido debajo del header fijo */
+main#contenido{
+  padding-top: var(--header-h);
+}
+
+/* Anclas: evita que el header tape el título */
+section[id]{ scroll-margin-top: calc(var(--header-h) + 18px); }
+
+/* Por si alguna sección crea overlay encima */
+.hero, .section, .footer{ position: relative; z-index: 1; }
