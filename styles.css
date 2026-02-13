@@ -1,8 +1,6 @@
 :root{
   --bg: #0b1220;
   --bg2:#0f172a;
-  --card:#111b33;
-  --card2:#0f1a33;
   --text:#e5e7eb;
   --muted:#a7b0c0;
   --border: rgba(255,255,255,.12);
@@ -21,10 +19,27 @@ body{
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(56,189,248,.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(167,139,250,.16), transparent 55%),
-    linear-gradient(180deg, var(--bg) 0%, #070b13 100%);
+    radial-gradient(1200px 700px at 18% -12%, rgba(56,189,248,.14), transparent 62%),
+    radial-gradient(1000px 650px at 92% 8%, rgba(167,139,250,.12), transparent 64%),
+    radial-gradient(900px 520px at 50% 110%, rgba(56,189,248,.06), transparent 55%),
+    linear-gradient(180deg, #070b13 0%, #050812 55%, #05070f 100%);
   line-height:1.55;
+}
+
+/* Sutil grano para evitar bandas en degradados */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(255,255,255,.010) 0px,
+      rgba(255,255,255,.010) 1px,
+      rgba(0,0,0,.010) 2px,
+      rgba(0,0,0,.010) 3px);
+  opacity: .10;
+  mix-blend-mode: overlay;
 }
 
 a{color:inherit;text-decoration:none}
@@ -312,9 +327,13 @@ h1{
 /* Sections */
 .section{padding: 54px 0}
 .section-alt{
-  background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 70%);
-  border-top: 1px solid rgba(255,255,255,.06);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  /* Fondo suave (sin franja brusca) */
+  background:
+    radial-gradient(900px 420px at 15% 0%, rgba(56,189,248,.06), transparent 60%),
+    radial-gradient(900px 420px at 85% 0%, rgba(167,139,250,.05), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0) 70%);
+  border-top: 1px solid rgba(255,255,255,.045);
+  border-bottom: 1px solid rgba(255,255,255,.045);
 }
 .section-head{
   max-width: 780px;
@@ -477,7 +496,7 @@ details p{margin: 10px 0 0}
 /* Footer */
 .footer{
   padding: 34px 0;
-  border-top: 1px solid rgba(255,255,255,.06);
+  border-top: 1px solid rgba(255,255,255,.045);
 }
 .footer-inner{
   display:flex;
@@ -543,4 +562,3 @@ details p{margin: 10px 0 0}
   }
   .nav-menu.is-open{display:flex}
 }
-

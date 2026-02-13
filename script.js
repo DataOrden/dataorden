@@ -3,8 +3,8 @@
 // Cambia estos valores a tus datos
 // ================================
 const SETTINGS = {
-  whatsappNumber: "525610973495", // Formato: 52 + lada + número. Ej: 5215512345678
-  emailTo: "dataorden@gmail.com",
+  whatsappNumber: "5210000000000", // Ej: 5215512345678
+  emailTo: "hola@dataorden.mx",
   emailSubject: "Diagnóstico DataOrden",
 };
 
@@ -30,20 +30,14 @@ function initMobileNav(){
     btn.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Cerrar al navegar
-  menu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => close());
-  });
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
 
-  // Cerrar si haces click fuera
   document.addEventListener("click", (e) => {
-    const target = e.target;
     if(!menu.classList.contains("is-open")) return;
-    if(target === btn || btn.contains(target) || menu.contains(target)) return;
+    if(btn.contains(e.target) || menu.contains(e.target)) return;
     close();
   });
 
-  // Cerrar con Escape
   document.addEventListener("keydown", (e) => {
     if(e.key === "Escape") close();
   });
@@ -90,11 +84,7 @@ function initForm(){
       `?subject=${encodeURIComponent(SETTINGS.emailSubject)}` +
       `&body=${encodeURIComponent(body)}`;
 
-    // UX
-    if(status){
-      status.textContent = "Listo: se abrirá tu correo para enviar el mensaje.";
-    }
-
+    if(status) status.textContent = "Listo: se abrirá tu correo para enviar el mensaje.";
     window.location.href = href;
   });
 }
