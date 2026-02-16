@@ -3,8 +3,8 @@
 // Cambia estos valores a tus datos
 // ================================
 const SETTINGS = {
-  whatsappNumber: "5210000000000", // Ej: 5215512345678
-  emailTo: "hola@dataorden.mx",
+  whatsappNumber: "525610973495", // Ej: 5215512345678
+  emailTo: "dataorden@gmail.com",
   emailSubject: "Diagnóstico DataOrden",
 };
 
